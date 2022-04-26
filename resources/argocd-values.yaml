@@ -1,0 +1,6 @@
+server:
+  ingress:
+    enabled: true
+    ingressClassName: "kong"
+    hosts:
+      - argocd.local

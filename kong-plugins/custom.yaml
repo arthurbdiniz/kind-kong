@@ -1,0 +1,7 @@
+apiVersion: configuration.konghq.com/v1
+kind: KongPlugin
+metadata:
+  name: custom-plugin
+config:
+  header_value: "my first custom plugin"
+plugin: myheader

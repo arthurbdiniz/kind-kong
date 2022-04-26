@@ -1,0 +1,28 @@
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: bar-app
+  labels:
+    app: bar
+spec:
+  selector:
+    matchLabels:
+      app: bar
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: bar
+    spec:
+      containers:
+      - name: echo
+        image: hashicorp/http-echo
+        args:
+        - "-text=bar"
+        ports:
+        - containerPort: 5678
+          protocol: TCP
+        resources:
+          requests:
+            cpu: 200m
